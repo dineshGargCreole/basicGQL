@@ -1,0 +1,55 @@
+..........................
+query getAllUsers {
+  users {
+    id
+    firstName
+    password
+  }
+}
+---------------------------------------
+query getAllQutoes {
+  qutoes {
+    name
+    by
+  }
+}
+-----------------------------------------
+query getAllUsers {
+  users {
+    id
+    firstName
+    password
+    qutoes {
+      name
+      by
+    }
+  }
+}
+----------------------------------------------
+query getUserById {
+  user(id: "23131") {
+    firstName
+    lastName
+    email
+  }
+}
+----------------------------------------------------
+query getQutoeById {
+  qutoesByUser(by: "23131") {
+    name
+    by
+  }
+}
+---------------------------------------------------
+query getQutoeById($userId: ID!) {
+  qutoesByUser(by: $userId) {
+    name
+    by
+  }
+}
+
+Keep below values in Query Variable in playground
+{
+  "userId": "4232"
+}
+------------------------------------------------------
