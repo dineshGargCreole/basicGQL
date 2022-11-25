@@ -53,3 +53,22 @@ Keep below values in Query Variable in playground
   "userId": "4232"
 }
 ------------------------------------------------------
+mutation createUser($userNew:UserInput!) {
+  user:signupUserDummy(userNew:$userNew){
+    id
+    firstName
+    lastName
+    email
+  }
+}
+
+Keep below values in Query Variable in playground
+{
+  "userNew": {
+    "firstName": "numeric",
+    "lastName": "digit",
+    "email": "num@yopmail.com",
+    "password": "11111"
+  }
+}
+-------------------------------------------------------------
